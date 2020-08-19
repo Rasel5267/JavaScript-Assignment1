@@ -1,4 +1,4 @@
-// Feet To Mile Conveert
+// Feet To Mile Convert
 function feetToMile(feet){
     if (feet == 0){
         return 0;
@@ -7,7 +7,7 @@ function feetToMile(feet){
         return feet * 0.000189394;
     }
     else{
-        return "Length can not be negetive."
+        return "Length can not be negative."
     }
 }
 
@@ -37,18 +37,25 @@ function tinyFriend(names){
 //Brick calculator
 function brickCalculator(floor){
     if(floor <=10){
-        var feet1 = floor * 15;
-        var brick = feet1 * 1000;       
+        var firstFloorNum = floor * 15;
+        var brick = firstFloorNum * 1000;       
     }
-    else if(floor>=11 && floor<=20){
-        var feet2 = floor * 12;
-        var brick = feet2 * 1000;
+    else if(floor<=20){
+        var firstFloorNum = 150000;
+        var remaining = floor - 10;
+        var secondFloor = remaining * 12;
+        var secondFloorNum = secondFloor * 1000;
+        var brick = firstFloorNum +  secondFloorNum;
     }
     else{
-        var feet3 = floor * 10;
-        var brick = feet3 * 1000;
+        var firstFloorNum = 150000;
+        var secondFloorNum = 120000;
+        var remaining = floor - 20;
+        var thirdFloor = remaining * 10;
+        var thirdFloorNum = thirdFloor * 1000;
+        var brick = firstFloorNum + secondFloorNum + thirdFloorNum;
     }
     return brick;
 }
-var result = brickCalculator(15);
+var result = brickCalculator(21);
 console.log(result);
